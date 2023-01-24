@@ -4,5 +4,8 @@ Natours/final-after-S06/
 Nexter/final/
 Trillo/final/
 
+# dependencies
+Natours/starter/node_modules/
+
 # Guide material
 slides-students-C04.pdf
