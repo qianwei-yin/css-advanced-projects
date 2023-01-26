@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	// inherit from body
+	box-sizing: inherit;
+}
+
+html {
+	// This defines how much 1rem is (base), but not a typography
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+}

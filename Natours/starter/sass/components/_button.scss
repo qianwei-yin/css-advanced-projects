@@ -1,0 +1,61 @@
+.btn {
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 100px;
+		transition: all 0.2s;
+
+		position: relative;
+	}
+
+	// The following 'two' after pseudo elements are the same element
+	&::after {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		transition: all 0.4s;
+	}
+
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+		// Note the syntax, it is the after element when hovering on the button, and the initial state is .btn::after
+		&::after {
+			transform: scaleX(1.4) scaleY(1.6);
+			opacity: 0;
+		}
+	}
+
+	&:active {
+		transform: translateY(-1px);
+		box-shadow: 0 0.5rem 0.5rem rgba($color-black, 0.2);
+	}
+
+	&--white {
+		background-color: $color-white;
+		color: $color-grey-dark;
+
+		&::after {
+			background-color: $color-white;
+		}
+	}
+
+	&--animated {
+		animation: moveInBottom 0.5s ease-out 0.5s;
+
+		// animation-fill-mode: sets how an animation applies styles to its target BEFORE and AFTER its execution.
+		// backwards: the animation will apply the values defined in the FIRST relevant keyframe as soon as it is applied to the target, and retain this during the animation-delay period.
+		animation-fill-mode: backwards;
+	}
+}
