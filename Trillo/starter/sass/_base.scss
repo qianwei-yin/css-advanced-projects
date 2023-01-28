@@ -13,7 +13,17 @@
 	--color-grey-dark-3: #999;
 
 	--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+	--shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.06);
+
+	--line: 1px solid var(--color-grey-light-2);
 }
+
+$bp-largest: 75em; // 1200px
+$bp-large: 68em; // 1088px
+$bp-medium: 55em; // 880px
+$bp-semi-medium: 42em; // 672px
+$bp-small: 35em; // 560px
+$bp-smallest: 28em; // 448px
 
 *,
 *::before,
@@ -26,6 +36,16 @@
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%;
+	}
+	@media only screen and (max-width: $bp-semi-medium) {
+		font-size: 43.75%;
+	}
+	@media only screen and (max-width: $bp-smallest) {
+		font-size: 37.5%;
+	}
 }
 
 body {
